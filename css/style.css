@@ -1,0 +1,306 @@
+/* LAYOUT */
+
+* {box-sizing: border-box}
+
+body {
+    display: flex;
+	flex-direction: column;
+	min-height:100vh;
+}
+
+main .container-fluid{
+	/*border-bottom:1px solid #efefef;*/
+	padding:50px 0;
+}
+
+.container-fluid{
+	padding-left:5% !important;
+	padding-right:5% !important;
+}
+
+h2{
+	color: #555555;
+	text-align:center;
+	padding-bottom:20px;
+	font-weight: 500;
+	font-family: 'Montserrat', sans-serif;
+	text-transform:uppercase;
+	font-size:1.8em;
+	letter-spacing:2px;
+	padding: 50px;
+}
+
+
+
+/* NAVIGATION */
+
+
+main{
+	flex-grow:1;
+}
+
+#myNavbar a {
+	text-transform: uppercase;
+}
+
+.navbar-brand{
+	color:#ff2b83 !important;
+	font-size:2em;
+}
+
+/* ABOUT ME */ 
+
+h1{
+	font-size:5em
+}
+
+#about{
+	padding: 150px 0 100px 0;
+	font-family: 'Montserrat', sans-serif;
+	background-color:white;
+}
+
+.pink{
+	color: #ff2b83;
+}
+.speech-bubble {
+	position: relative;
+	background: #ff2b83;
+	border-radius: .1em;
+	padding: .2em .5em;
+	color:white;
+	text-transform:uppercase;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 10%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: #ff2b83;
+	border-bottom: 0;
+	margin-bottom: -10px;
+}
+
+#about .speech-bubble {
+	max-width:150px;
+	text-align:center;
+	font-size:1.4em;
+}
+
+#about p{
+	font-size:1.3em;
+}
+
+/* SKILLS */
+
+#skills{
+	background:#f6f6f6;
+	clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+	padding-top: 100px;
+	padding-bottom: 200px;
+	margin-bottom: -150px;
+}
+
+.skill_outer{
+	background-color:#cacaca;
+	margin-bottom:15px;
+}
+
+.skill{
+	background-color: #ff2b83;
+	height:10px;
+}
+
+#skills p{
+	margin-bottom:5;
+}
+
+/* PAPERS */
+
+#papers{
+	background-color:#eaeaea;
+	clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+	padding-top: 100px;
+	padding-bottom: 100px;
+	margin-bottom: -100px;
+}
+
+#papers h2{
+	margin-bottom: 30px;
+}
+
+.fakeimg{
+	background-color:#cacaca;
+	width:100%;
+	height:100px;	
+}
+
+.cardList{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	align-items:center;
+}
+.card{
+	border-radius:5px;
+	border:1px solid #cacaca;
+	width:100% !important;
+	margin: 20px auto;
+	text-align:center;
+	background-color:white;
+}
+
+.card-body {
+	padding:10px;
+	text-align:justify;
+}
+
+.card-title{
+	font-weight:bold;
+	text-align:left;
+}
+
+.card .btn{
+	background-color: #ff2b83;
+	color:white;
+	margin: 10px;
+}
+
+.card .btn:hover {
+	color: #ff2b83;
+	background-color:white;
+}
+	
+.card_img{
+	width:100%;
+	height:100px;	
+	overflow:hidden;
+}
+
+.card img{
+	width:100%;
+	height:auto;
+	/*para que salga en blanco y negro*/
+	-webkit-filter: grayscale(100%);
+	-webkit-transition: .5s ease-in-out;
+	-moz-filter: grayscale(100%); 
+	-moz-transition: .5s ease-in-out;
+	-o-filter: grayscale(100%); 
+	-o-transition: .5s ease-in-out;
+	z-index:-1;
+	opacity:0.3;
+	//margin-top:-240px;
+}
+
+.card:hover img {
+  -webkit-filter: grayscale(0%);
+  -webkit-transition: .5s ease-in-out;
+  -moz-filter: grayscale(0%);
+  -moz-transition: .5s ease-in-out;
+  -o-filter: grayscale(0%);
+  -o-transition: .5s ease-in-out;
+	z-index:999;
+	opacity:1;
+} 
+
+h4{
+	height:150px;
+	width:100%;
+	font-size:5em;
+	color: pink;
+	height:150px;
+	margin-bottom: -170px;
+	z-index:998;
+}
+
+
+@media only screen and (min-width: 768px) {
+	.cardList{
+		display:flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+		width:100%;
+		align-items: stretch;
+	}
+	.card{
+		border-radius:5px;
+		border:1px solid #cacaca;
+		width:45% !important;
+		display:flex;
+		flex-direction:column;
+	}
+	
+	.card-body {
+		flex-grow:1;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.cardList{
+		display:flex;
+		flex-direction:row;
+		flex-wrap:no-wrap;
+		width:100%;
+		justify-content: center;
+		align-items: stretch;
+	}
+	.card{
+		border-radius:5px;
+		border:1px solid #cacaca;
+		width:20% !important;
+		margin: 0 20px;
+		display:flex;
+		flex-direction:column;
+	}
+	
+	.card-body {
+		flex-grow:1;
+	}
+}
+
+/* CONTACT */
+
+#contact h2{
+	margin-bottom: 30px;
+}
+
+#social{
+	display: flex;
+	flex-direction:row;
+	justify-content:center;
+}
+
+#social div{
+	text-transform:uppercase;
+	cursor:pointer;
+	text-align:center;
+}
+#social div:hover{
+	font-weight:bold;
+}
+
+#social .fa{
+	font-size:2em;
+	padding:0 50px;
+	color: #ff2b83;
+}
+
+@media only screen and (min-width: 768px) {
+	#social div{
+		margin:0 5%;
+	}
+}
+
+/* FOOTER */
+
+footer{
+	background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+	width:100%;
+	padding:50px 0;
+}
+	
